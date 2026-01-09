@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Professional's Standard - KB Life Partners Oasis 7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
+        
+        /* Chart Container Styling - Responsive & Controlled */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Constraint width for readability */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Base height for mobile */
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 350px; } /* Taller on desktop */
+        }
+
+        /* Glassmorphism for cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+    <!-- 
+      Color Palette: Brilliant Blue & Electric Gold
+      Primary Blue: #2563EB (Blue 600)
+      Dark Blue: #1E3A8A (Blue 900)
+      Accent Gold: #F59E0B (Amber 500)
+      Background: #F8FAFC (Slate 50)
+    -->
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-200 selection:text-amber-900">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-black text-xl tracking-tight text-blue-900">
+                KB<span class="text-slate-400 font-light">Life Partners</span> <span class="text-blue-600">OASIS 7</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-bold text-slate-500">
+                <a href="#reality" class="hover:text-blue-600 transition-colors">Reality</a>
+                <a href="#brand" class="hover:text-blue-600 transition-colors">Brand</a>
+                <a href="#system" class="hover:text-blue-600 transition-colors">System</a>
+                <a href="#data" class="hover:text-blue-600 transition-colors">Data</a>
+                <a href="#vision" class="hover:text-blue-600 transition-colors">Vision</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
+        <!-- Abstract Background Shapes (CSS Only) -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+            <div class="inline-block px-4 py-1 mb-6 border border-amber-400/30 rounded-full bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-400 font-bold text-xs tracking-widest uppercase">For Professional Advisors</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
+                당신의 퍼포먼스,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500">시스템을 만나 브랜드가 됩니다</span>
+            </h1>
+            <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                "잘하는 영업"을 넘어 "지속 가능한 비즈니스"로.<br>
+                오아시스7팀이 제안하는 프로의 다음 챕터입니다.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#reality" class="bg-amber-500 hover:bg-amber-400 text-blue-900 font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1">
+                    이야기 시작하기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro: The Professional's Dilemma -->
+    <section id="reality" class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">현재의 질문</h2>
+            <div class="w-24 h-1.5 bg-blue-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                높은 성과에도 불구하고 느껴지는 <span class="text-blue-700 font-bold">막연한 피로감</span>, 그 원인은 무엇입니까?
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <!-- Card 1 -->
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-slate-300 hover:border-blue-500 transition-all group">
+                <div class="text-5xl font-black text-slate-100 group-hover:text-blue-50 transition-colors mb-4">01</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Efficiency</h3>
+                <p class="text-slate-500 text-sm">영업 시간보다 행정/마케팅에 쏟는 시간이 더 많지 않으십니까?</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-slate-300 hover:border-amber-500 transition-all group mt-0 md:-mt-4">
+                <div class="text-5xl font-black text-slate-100 group-hover:text-amber-50 transition-colors mb-4">02</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Isolation</h3>
+                <p class="text-slate-500 text-sm">전략 수립부터 디자인까지 혼자 감당하는 '고립된 구조'에 갇혀 있지는 않으십니까?</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-slate-300 hover:border-blue-500 transition-all group">
+                <div class="text-5xl font-black text-slate-100 group-hover:text-blue-50 transition-colors mb-4">03</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Scalability</h3>
+                <p class="text-slate-500 text-sm">판매자(Seller)를 넘어 대체 불가능한 전문가(Advisor)로 인정받고 싶지 않으십니까?</p>
+            </div>
+        </div>
+
+        <!-- Chart Section: The Wall -->
+        <div class="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">당신의 경쟁력은<br>'투지'입니까, '인프라'입니까?</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        탁월한 개인도 시스템의 뒷받침 없이는 성장의 한계에 부딪힙니다. 오아시스7팀은 당신의 시간을 가장 비싼 업무인 <strong>'상담'</strong>에만 집중하게 합니다.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-sm text-slate-700">
+                            <span class="w-2 h-2 bg-slate-400 rounded-full mr-3"></span>
+                            비효율적 행정 업무 최소화
+                        </li>
+                        <li class="flex items-center text-sm text-slate-700">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            전담 팀을 통한 마케팅 자동화
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h4 class="text-center text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">업무 시간 효율성 비교 (Simulation)</h4>
+                    <div class="chart-container">
+                        <canvas id="efficiencyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution 1: Brand Power -->
+    <section id="brand" class="py-20 bg-blue-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <!-- Text Content -->
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Solution 1: 브랜드의 신뢰</h2>
+                    <p class="text-blue-600 font-bold mb-6">KB Brand Power</p>
+                    <p class="text-slate-700 mb-6 text-lg">
+                        고객의 문을 여는 가장 강력한 키워드, <strong>'KB'</strong>.<br>
+                        타 GA가 회사를 설명하는 데 20분을 쓸 때, 우리는 <strong>'고객의 솔루션'</strong>을 바로 이야기합니다.
+                    </p>
+                    <div class="bg-white border-l-4 border-amber-500 p-6 shadow-sm rounded-r-xl">
+                        <p class="text-slate-800 italic">
+                            "은행, 증권, 손보 등 KB금융그룹의 인프라와 연계된 토탈 솔루션은 고객에게 압도적인 신뢰감을 줍니다."
+                        </p>
+                    </div>
+                </div>
+                <!-- Chart -->
+                <div class="order-1 md:order-2 bg-white p-6 rounded-2xl shadow-lg">
+                    <h4 class="text-center text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">초기 신뢰 형성 속도 (Score)</h4>
+                    <div class="chart-container">
+                        <canvas id="brandChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-slate-400 mt-4">* 브랜드 인지도가 상담 몰입도에 미치는 영향</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution 2 & 3: System & Market -->
+    <section id="system" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Solution 2 & 3: 시스템과 마켓</h2>
+                <p class="text-slate-400">Creative Support & Market Infrastructure</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- System Column -->
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-2xl font-bold">S</div>
+                        <div class="ml-4">
+                            <h3 class="text-2xl font-bold text-white">Creative Support</h3>
+                            <p class="text-blue-400 text-sm">당신의 뒤에는 전담 브랜딩 팀이 있습니다</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-8 leading-relaxed">
+                        단순 자료 제공이 아닙니다. <strong>개인별 브랜딩 최적화</strong>를 지원합니다.
+                        고퀄리티 뉴스레터, 세미나 기획, 프리미엄 제안서 디자인까지. 당신은 '영업'만 하십시오.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-slate-900 p-4 rounded-lg text-center border border-slate-700">
+                            <p class="text-amber-400 font-bold mb-1">Planning</p>
+                            <p class="text-xs text-slate-400">세미나/콘텐츠 기획</p>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg text-center border border-slate-700">
+                            <p class="text-amber-400 font-bold mb-1">Design</p>
+                            <p class="text-xs text-slate-400">제안서/브랜딩 디자인</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Column -->
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center text-2xl font-bold text-slate-900">M</div>
+                        <div class="ml-4">
+                            <h3 class="text-2xl font-bold text-white">Market Expansion</h3>
+                            <p class="text-amber-400 text-sm">개척이 아닌, 선점된 시장으로의 진입</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 mb-6">
+                        <div class="chart-container h-48">
+                            <canvas id="marketChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 rounded-full text-xs text-slate-300 border border-slate-600">CEO 포럼</span>
+                        <span class="px-3 py-1 bg-slate-700 rounded-full text-xs text-slate-300 border border-slate-600">약사회 세미나</span>
+                        <span class="px-3 py-1 bg-slate-700 rounded-full text-xs text-slate-300 border border-slate-600">의사 세미나</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution 4: Data Driven -->
+    <section id="data" class="py-20 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Solution 4: 상담의 과학</h2>
+            <p class="text-blue-600 font-bold">Logic & Data with 'mindfin'</p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col md:flex-row">
+            <div class="md:w-1/2 p-8 md:p-12 bg-gradient-to-br from-blue-50 to-white flex flex-col justify-center">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">경험의 직관을<br><span class="text-blue-600">데이터의 확신</span>으로</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    자산가들은 주관적 권유보다 객관적 근거를 신뢰합니다.<br>
+                    <strong>'mindfin' 솔루션</strong>은 고객의 금융 DNA(성향)를 <strong>Big 5 심리 이론</strong>에 기반하여 정량적으로 분석합니다.
+                </p>
+                <div class="bg-white p-4 rounded-xl border border-blue-100 shadow-sm">
+                    <p class="text-sm text-slate-500 mb-2"><strong>Why It Works:</strong></p>
+                    <p class="text-sm text-slate-700">"고객님은 '안정성' 점수가 상위 5%이므로, 이 포트폴리오가 수학적으로 최적입니다." 라고 말할 수 있는 힘.</p>
+                </div>
+            </div>
+            <div class="md:w-1/2 p-8 bg-white flex items-center justify-center border-l border-slate-100">
+                <div class="chart-container w-full">
+                    <canvas id="mindfinChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision -->
+    <section id="vision" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Vision: Next Step</h2>
+            <p class="text-xl text-slate-600 mb-12">
+                단순한 이직이 아닙니다.<br>
+                당신의 이름이 <strong>하나의 브랜드가 되는 과정</strong>입니다.
+            </p>
+            
+            <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100 mb-12">
+                <h4 class="text-left font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="w-1 h-6 bg-amber-500 mr-3 rounded-full"></span>
+                    Brand Value Growth Trajectory
+                </h4>
+                <div class="chart-container">
+                    <canvas id="visionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-black mb-8">
+                우리는 당신과 같은 <span class="text-amber-500">프로</span>를<br>기다려왔습니다.
+            </h2>
+            <p class="text-slate-400 mb-12 text-lg font-light">
+                혼자 고민하지 마십시오.<br>
+                오아시스7팀의 시스템이 당신의 다음 10년을 설계합니다.
+            </p>
+            
+            <div class="inline-flex flex-col md:flex-row items-center justify-center gap-6 bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-2xl">
+                <div class="text-left">
+                    <p class="text-amber-500 font-bold text-xs tracking-widest uppercase mb-1">Contact Us</p>
+                    <p class="text-2xl font-bold text-white">KB라이프파트너스 오아시스7팀</p>
+                    <p class="text-lg text-slate-300">안정선 부지점장</p>
+                </div>
+                <div class="h-px w-full md:w-px md:h-16 bg-slate-600"></div>
+                <div class="text-left space-y-2">
+                    <p class="flex items-center text-slate-300 hover:text-white transition cursor-pointer">
+                        <span class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center mr-3 text-xs font-bold">P</span>
+                        010-5324-1344
+                    </p>
+                    <p class="flex items-center text-slate-300 hover:text-white transition cursor-pointer">
+                        <span class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center mr-3 text-xs font-bold">E</span>
+                        MOM@kblp.co.kr
+                    </p>
+                </div>
+            </div>
+            
+            <p class="mt-16 text-xs text-slate-600">
+                &copy; 2024 KB Life Partners Oasis 7 Team. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        // --- 1. Global Chart Configuration ---
+        Chart.defaults.font.family = "'Noto Sans KR', sans-serif";
+        Chart.defaults.color = '#64748b'; // Slate 500
+        Chart.defaults.scale.grid.color = '#f1f5f9'; // Slate 100
+
+        // Helper: Label Wrapping for long text
+        function wrapLabel(label) {
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= 16) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Shared Tooltip Configuration
+        const commonTooltip = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) return label.join(' ');
+                    return label;
+                }
+            },
+            backgroundColor: 'rgba(30, 58, 138, 0.95)', // Blue 900
+            padding: 12,
+            titleFont: { size: 14, weight: 'bold' },
+            bodyFont: { size: 13 },
+            cornerRadius: 8,
+            displayColors: true
+        };
+
+        // --- 2. Efficiency Chart (Stacked Bar) ---
+        new Chart(document.getElementById('efficiencyChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Independent Agent', 'Team Oasis Partner'],
+                datasets: [
+                    {
+                        label: 'Sales & Consulting (Revenue Generating)',
+                        data: [30, 80],
+                        backgroundColor: '#2563EB', // Blue 600
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Admin / Marketing / Design',
+                        data: [70, 20],
+                        backgroundColor: '#cbd5e1', // Slate 300
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8 } }
+                },
+                scales: {
+                    x: { stacked: true, max: 100, grid: { display: false }, ticks: { display: false } },
+                    y: { stacked: true, grid: { display: false }, ticks: { font: { weight: 'bold' } } }
+                }
+            }
+        });
+
+        // --- 3. Brand Trust Chart (Horizontal Bar) ---
+        new Chart(document.getElementById('brandChart'), {
+            type: 'bar',
+            data: {
+                labels: ['General GA', 'KB Life Partners'],
+                datasets: [{
+                    label: 'Trust Score',
+                    data: [35, 95],
+                    backgroundColor: ['#e2e8f0', '#F59E0B'], // Slate 200 vs Amber 500
+                    borderRadius: 8,
+                    barThickness: 30
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { beginAtZero: true, max: 100, grid: { display: false } },
+                    y: { grid: { display: false }, ticks: { font: { weight: 'bold' } } }
+                }
+            }
+        });
+
+        // --- 4. Market Conversion Chart (Vertical Bar) ---
+        new Chart(document.getElementById('marketChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Random DB', 'Target Seminar'],
+                datasets: [{
+                    label: 'Conversion Rate (%)',
+                    data: [3.5, 28.5],
+                    backgroundColor: ['#475569', '#3b82f6'], // Slate 600 vs Blue 500
+                    borderRadius: 6,
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#e2e8f0' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // --- 5. Mindfin Chart (Radar) ---
+        new Chart(document.getElementById('mindfinChart'), {
+            type: 'radar',
+            data: {
+                labels: ['개방성 (Openness)', '성실성 (Conscientiousness)', '외향성 (Extraversion)', '우호성 (Agreeableness)', '신경성 (Neuroticism)'],
+                datasets: [{
+                    label: 'Customer Financial DNA',
+                    data: [85, 90, 60, 75, 40],
+                    fill: true,
+                    backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                    borderColor: '#2563EB',
+                    pointBackgroundColor: '#F59E0B',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#F59E0B',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { display: false }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#e2e8f0' },
+                        grid: { color: '#e2e8f0' },
+                        pointLabels: {
+                            font: { size: 11, weight: 'bold' },
+                            color: '#475569'
+                        },
+                        ticks: { display: false, backdropColor: 'transparent' }
+                    }
+                }
+            }
+        });
+
+        // --- 6. Vision Chart (Line) ---
+        new Chart(document.getElementById('visionChart'), {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [
+                    {
+                        label: 'With Oasis 7 (Brand Asset)',
+                        data: [50, 85, 130, 190, 280],
+                        borderColor: '#F59E0B', // Amber 500
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: 'Solo Agent (Linear)',
+                        data: [50, 65, 75, 80, 85],
+                        borderColor: '#94a3b8', // Slate 400
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        tension: 0.4,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { position: 'top', labels: { usePointStyle: true } }
+                },
+                scales: {
+                    y: { display: false },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
